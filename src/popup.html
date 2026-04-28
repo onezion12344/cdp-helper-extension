@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDP Helper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">🔌</div>
+      <h1>CDP Helper</h1>
+      <p class="subtitle" id="browser-name">Detecting browser...</p>
+    </header>
+
+    <div class="status-card" id="status-card">
+      <div class="status-row">
+        <span class="status-dot" id="status-dot"></span>
+        <span class="status-text" id="status-text">Checking...</span>
+      </div>
+      <p class="status-detail" id="status-detail"></p>
+    </div>
+
+    <div class="section">
+      <h3>Start Browser with CDP</h3>
+      <p class="section-desc">Copy and run the command for your OS:</p>
+
+      <div class="tab-bar">
+        <button class="tab active" data-os="mac">macOS</button>
+        <button class="tab" data-os="win">Windows</button>
+        <button class="tab" data-os="linux">Linux</button>
+      </div>
+
+      <div class="cmd-box">
+        <pre id="cmd-text"></pre>
+        <button class="btn-copy" id="btn-copy">Copy</button>
+      </div>
+
+      <div class="browser-select">
+        <label>Browser:</label>
+        <select id="browser-select">
+          <option value="chrome">Chrome</option>
+          <option value="edge">Edge</option>
+          <option value="chromium">Chromium</option>
+          <option value="brave">Brave</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>After Starting</h3>
+      <ol class="steps">
+        <li>Run the command above in <strong>Terminal</strong></li>
+        <li>Keep that terminal <strong>open</strong></li>
+        <li>Click <strong>Recheck</strong> below</li>
+        <li>Your AI tools can now control this browser!</li>
+      </ol>
+      <button class="btn btn-secondary" id="btn-recheck">Recheck CDP Status</button>
+    </div>
+
+    <div class="section links">
+      <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank">chrome-devtools-mcp</a>
+      <span class="sep">|</span>
+      <a href="https://github.com/epiral/bb-browser" target="_blank">bb-browser</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
